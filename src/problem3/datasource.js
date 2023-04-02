@@ -1,3 +1,5 @@
+// Applied fix 2 from https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9
+
 class Datasource {
   constructor(url) {
     this.url = url;
@@ -16,6 +18,7 @@ class Datasource {
 }
 
 class Price {
+  // Amount in cents
   constructor(pair, buy, sell) {
     this.pair = pair;
     this.buy = buy;
@@ -23,7 +26,7 @@ class Price {
   }
 
   mid() {
-    return (this.buy + this.sell) / 2;
+    return (this.buy + this.sell) / 200;
   }
 
   quote() {
