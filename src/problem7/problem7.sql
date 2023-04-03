@@ -29,7 +29,6 @@
 SELECT b.address
 FROM balances b
 LEFT JOIN trades t ON b.address = t.address AND t.block_height > 730000
-WHERE b.denom IN ('usdc', 'swth', 'tmz')
 GROUP BY b.address
 HAVING SUM(CASE WHEN b.denom = 'usdc' THEN b.amount * 0.000001
                 WHEN b.denom = 'swth' THEN b.amount * 0.00000005
