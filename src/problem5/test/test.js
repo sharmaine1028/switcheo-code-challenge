@@ -5,7 +5,8 @@ let accounts = await web3.eth.getAccounts();
 
 let instance1 = await HelloCoin.deployed();
 let tokenaddr1 = instance1.address;
-let res1 = await instance1.sendCoin(accounts[1], 10, { from: accounts[0] });
+let res11 = await instance1.sendCoin(accounts[1], 10, { from: accounts[0] });
+let res12 = await instance1.sendCoin(accounts[1], 10, { from: accounts[0] });
 
 let instance2 = await HelloCoin.new();
 let tokenaddr2 = instance2.address;
